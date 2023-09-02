@@ -8,6 +8,7 @@ const Demo = () => {
     url: "",
     summary: "",
   });
+
   const [allArticles, setAllArticles] = useState([]);
   const [copied, setCopied] = useState("");
 
@@ -35,14 +36,14 @@ const Demo = () => {
     if (existingArticle) return setArticle(existingArticle);
 
     const { data } = await getSummary({ articleUrl: article.url });
-    
+
     if (data?.summary) {
       const newArticle = { ...article, summary: data.summary };
       const updatedAllArticles = [newArticle, ...allArticles];
 
       // update state and local storage
       setArticle(newArticle);
-      console.log(newArticle);
+      // console.log(newArticle);
       setAllArticles(updatedAllArticles);
       localStorage.setItem("articles", JSON.stringify(updatedAllArticles));
     }
