@@ -5,6 +5,16 @@
 /* 
   Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
 */
+/* Hide both vertical and horizontal scrollbars */
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 11 */
+}
+
+/* Webkit-based browsers (Chrome, Safari) */
+body::-webkit-scrollbar {
+  display: none;
+}
 
 .main {
   width: 100vw;
